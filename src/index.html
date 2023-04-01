@@ -19,62 +19,106 @@
 </head>
 
 <body>
-    <header class="globalHeader">
-        <nav>
-            <svg class="icon">
-                <use xlink:href="#icon-gengduo"></use>
-            </svg>
-        </nav>
-    </header>
-    <main class="globalMain">
-        <div class="introduction">
+    <div class="todoLayout">
+        <div class="todoSider">
             <div>
                 <svg class="icon">
-                    <use xlink:href="#icon-home-fill"></use>
+                    <use xlink:href="#icon-gengduo"></use>
                 </svg>
             </div>
-            <span>任务</span>
+            <nav>
+                <ul>
+                    <li>
+                        <svg class="icon">
+                            <use xlink:href="#icon-home-fill"></use>
+                        </svg>
+                        <span>任务</span>
+                    </li>
+                    <li>
+                        <svg class="icon">
+                            <use xlink:href="#icon-shiwujiaoxing"></use>
+                        </svg>
+                        <span>概要</span>
+                    </li>
+                    <li>
+                        <svg class="icon">
+                            <use xlink:href="#icon-zhengque"></use>
+                        </svg>
+                        <span>完成</span>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <div class="todoContent">
-            <ul class="todoList">
-                <li class="todo">
-                    <div class="todoEnter"></div>
-                    <span>学习js</span>
+        <div class="todowrapper">
+            <header class="todoHeader">
+                <div class="headerMore" onclick="openDrawer()">
+                    <svg class="icon">
+                        <use xlink:href="#icon-gengduo"></use>
+                    </svg>
+                </div>
+            </header>
+            <main class="todoMain">
+                <div class="introduction">
                     <div>
                         <svg class="icon">
-                            <use xlink:href="#icon-kongwujiaoxing"></use>
+                            <use xlink:href="#icon-home-fill"></use>
                         </svg>
                     </div>
-                </li>
-                <li class="todo">
-                    <div class="todoEnter"></div>
-                    <span>学习css</span>
-                    <div>
-                        <svg class="icon">
-                            <use xlink:href="#icon-kongwujiaoxing"></use>
-                        </svg>
+                    <span>任务</span>
+                </div>
+                <div class="todoContent">
+                    <ul class="todoList">
+                        <li class="todo">
+                            <div class="todoEnter"></div>
+                            <span>学习js</span>
+                            <div>
+                                <svg class="icon">
+                                    <use xlink:href="#icon-kongwujiaoxing"></use>
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="todo">
+                            <div class="todoEnter"></div>
+                            <span>学习css</span>
+                            <div>
+                                <svg class="icon">
+                                    <use xlink:href="#icon-kongwujiaoxing"></use>
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="todo">
+                            <div class="todoEnter"></div>
+                            <span>学习html</span>
+                            <div>
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-kongwujiaoxing"></use>
+                                </svg>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="todoInput">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-plus"></use>
+                    </svg>
+                    <input type="text">
+                </div>
+            </main>
+            <footer class="todoFooter">
+                <div class="todoOperation">
+                    <div class="selectOperation">
+                        <span>选择操作</span>
+                        <span>标记为完成</span>
+                        <span>标记为重要</span>
+                        <span>删除任务</span>
                     </div>
-                </li>
-                <li class="todo">
-                    <div class="todoEnter"></div>
-                    <span>学习html</span>
-                    <div>
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-kongwujiaoxing"></use>
-                        </svg>
+                    <div class="cancel">
+                        <span>取消</span>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </footer>
         </div>
-        <div class="bottomInput">
-            <div>
-                <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-plus"></use>
-                </svg>
-            </div>
-            <input type="text">
-        </div>
-    </main>
+    </div>
     <script src="//at.alicdn.com/t/c/font_3991123_qxsrinylprp.js"></script>
     <script src="./main.js"></script>
 </body>

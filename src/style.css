@@ -37,7 +37,25 @@ body {
     flex-direction: column;
 }
 
-.globalHeader {}
+.sider {
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    left: -300px;
+    top: 0px;
+    background-color: #ffffff;
+    transition: all .5s;
+}
+
+.globalHeader .headerMore {
+    border: 1px solid red;
+    width: 30px;
+    height: 30px
+}
+
+.globalHeader .headerMore .icon {
+    color: #ffffff;
+}
 
 .globalMain {
     flex-grow: 1;
