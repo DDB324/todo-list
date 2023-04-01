@@ -6,10 +6,76 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <title>ToDoList</title>
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+    <header class="globalHeader">
+        <nav>
+            <svg class="icon">
+                <use xlink:href="#icon-gengduo"></use>
+            </svg>
+        </nav>
+    </header>
+    <main class="globalMain">
+        <div class="introduction">
+            <div>
+                <svg class="icon">
+                    <use xlink:href="#icon-home-fill"></use>
+                </svg>
+            </div>
+            <span>任务</span>
+        </div>
+        <div class="todoContent">
+            <ul class="todoList">
+                <li class="todo">
+                    <div class="todoEnter"></div>
+                    <span>学习js</span>
+                    <div>
+                        <svg class="icon">
+                            <use xlink:href="#icon-kongwujiaoxing"></use>
+                        </svg>
+                    </div>
+                </li>
+                <li class="todo">
+                    <div class="todoEnter"></div>
+                    <span>学习css</span>
+                    <div>
+                        <svg class="icon">
+                            <use xlink:href="#icon-kongwujiaoxing"></use>
+                        </svg>
+                    </div>
+                </li>
+                <li class="todo">
+                    <div class="todoEnter"></div>
+                    <span>学习html</span>
+                    <div>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-kongwujiaoxing"></use>
+                        </svg>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="bottomInput">
+            <div>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-plus"></use>
+                </svg>
+            </div>
+            <input type="text">
+        </div>
+    </main>
+    <script src="//at.alicdn.com/t/c/font_3991123_qxsrinylprp.js"></script>
     <script src="./main.js"></script>
 </body>
 
