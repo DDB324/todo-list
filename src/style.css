@@ -43,9 +43,41 @@ body {
     top: 0px;
     background-color: #ffffff;
     transition: all .5s;
+    z-index: 1;
+    padding: 25px;
 }
 
-.todoWrapper {
+.todoSider .icon-gengduo {
+    color: #787878;
+    font-size: 36px;
+    margin-left: 14px;
+}
+
+.todoSider ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.todoSider ul li {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.todoSider ul li:hover {
+    background-color: #e4e4e4;
+}
+
+.todoSider ul li .iconfont {
+    font-size: 36px;
+    margin: 10px;
+    /* margin-left: 10px; */
+}
+
+.todoLayout .todoWrapper {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -78,14 +110,14 @@ body {
     color: white;
 }
 
-.todoMain .introduction .icon-home-fill {
+.todoMain .introduction .iconfont {
     font-size: 36px;
     margin-right: 30px;
 }
 
 .todoMain .todoContent {
     flex-grow: 1;
-
+    position: relative;
 }
 
 .todoMain .todoContent .todoList {
@@ -101,10 +133,15 @@ body {
     background-color: #ffffff;
     margin-bottom: 20px;
     border-radius: 5px;
+    padding-left: 20px;
 }
 
 .todoMain .todoContent .todoList .todo span {
     flex-grow: 1;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .todoMain .todoContent .todoList .todo .icon-kongwujiaoxing {
@@ -112,15 +149,31 @@ body {
     font-size: 30px;
 }
 
+.todoMain .todoContent .icon-empty {
+    font-size: 50px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
+.todoMain .todoContent .todoList .todo .icon-shiwujiaoxing {
+    margin-right: 20px;
+    font-size: 30px;
+    color: #5e72c0;
+}
+
 .todoMain .todoContent .todoList .todo .todoEnter {
     border: 3px solid;
     border-radius: 50%;
     width: 34px;
     height: 34px;
-    margin-top: 15px;
+    /* margin-top: 15px;
     margin-bottom: 15px;
     margin-left: 30px;
-    margin-right: 30px;
+    margin-right: 30px; */
 }
 
 .todoMain .todoInput {
@@ -148,12 +201,46 @@ body {
 
 .todoFooter {
     position: fixed;
-    max-width: 100%;
+    width: 100%;
     height: 300px;
     bottom: -300px;
     left: 0px;
     background-color: #ffffff;
     transition: all .5s;
+}
+
+.todoFooter .todoOperation {
+    font-size: 20px;
+
+}
+
+.todoFooter .todoOperation .selectOperation {
+    display: flex;
+    flex-direction: column;
+}
+
+.todoFooter .todoOperation .selectOperation span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+.todoFooter .todoOperation .selectOperation span:first-child {
+    color: #b2b2bb;
+    border-bottom: 2px solid;
+}
+
+.todoFooter .todoOperation .selectOperation span:last-child {
+    color: red;
+    border-bottom: 8px solid #f4f6f8;
+}
+
+.todoFooter .todoOperation .cancel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
 }
 
 /* 任务页icon配置 */

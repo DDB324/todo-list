@@ -13,24 +13,22 @@
 <body>
     <div class="todoLayout">
         <div class="todoSider">
-            <div class="iconfont icon-empty">
+            <div class="iconfont icon-gengduo" onclick="closeDrawer()">
             </div>
-            <nav>
-                <ul>
-                    <li>
-                        <div class="iconfont icon-home-fill"> </div>
-                        <span>任务</span>
-                    </li>
-                    <li>
-                        <div class="iconfont icon-shiwujiaoxing"> </div>
-                        <span>概要</span>
-                    </li>
-                    <li>
-                        <div class="iconfont icon-zhengque"> </div>
-                        <span>完成</span>
-                    </li>
-                </ul>
-            </nav>
+            <ul>
+                <li onclick="clickTask()">
+                    <div class="iconfont icon-home-fill"> </div>
+                    <span>任务</span>
+                </li>
+                <li onclick="clickImportant()">
+                    <div class="iconfont icon-shiwujiaoxing"> </div>
+                    <span>重要</span>
+                </li>
+                <li onclick="clickComplete()">
+                    <div class="iconfont icon-zhengque"> </div>
+                    <span>完成</span>
+                </li>
+            </ul>
         </div>
         <div class="todoWrapper">
             <header class="todoHeader">
@@ -43,22 +41,8 @@
                 </div>
                 <div class="todoContent">
                     <ul class="todoList">
-                        <li class="todo">
-                            <div class="todoEnter"></div>
-                            <span>学习js</span>
-                            <div class="iconfont icon-kongwujiaoxing"> </div>
-                        </li>
-                        <li class="todo">
-                            <div class="todoEnter"></div>
-                            <span>学习css</span>
-                            <div class="iconfont icon-kongwujiaoxing"> </div>
-                        </li>
-                        <li class="todo">
-                            <div class="todoEnter"></div>
-                            <span>学习html</span>
-                            <div class="iconfont icon-kongwujiaoxing"> </div>
-                        </li>
                     </ul>
+                    <div class="iconfont icon-empty"> </div>
                 </div>
                 <div class="todoInput">
                     <div class="iconfont icon-plus"> </div>
@@ -70,11 +54,11 @@
             <div class="todoOperation">
                 <div class="selectOperation">
                     <span>选择操作</span>
-                    <span>标记为完成</span>
-                    <span>标记为重要</span>
-                    <span>删除任务</span>
+                    <span onclick="markComplete()">标记为完成</span>
+                    <span onclick="markImportant()">标记为重要</span>
+                    <span onclick="deleteTask()">删除任务</span>
                 </div>
-                <div class="cancel">
+                <div class="cancel" onclick="downDrawer()">
                     <span>取消</span>
                 </div>
             </div>
