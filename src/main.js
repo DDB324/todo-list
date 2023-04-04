@@ -50,34 +50,43 @@ function onComplete() {
 function onImportant() {
     console.log(2);
 }
-let todoList = [];
-let newItem1 = {
-    title: "学习HTML",
-    done: false,
-    important: false
-}
-let newItem2 = {
-    title: "学习CSS",
-    done: false,
-    important: true
-}
-// let newItem3 = {
-//     title: "学习JS",
-//     done: true,
-//     important: true
-// }
-todoList.unshift(newItem1);
-todoList.unshift(newItem2);
-// todoList.unshift(newItem3);
-let jsonString = JSON.stringify(todoList);
-localStorage.setItem("todolist", jsonString)
 
-const render = () => {
-    let todos = document.getElementsByClassName("todoList");
-    const todoListFromLocalStorage = localStorage.getItem("todolist")
-    let todoListObject = JSON.parse(todoListFromLocalStorage)
-    const currentPageName = document.getElementsByClassName("introduction")[0].innerText
-    const filteredTodoList = todoListObject.filter(
+let myInput = document.getElementsByClassName("myInput")[0];
+
+// 监听输入框的按键事件
+myInput.addEventListener("keyup", function (event) {
+    let newTodoItem;
+    // 判断是否按下 "Enter" 键（keyCode 为 13）
+    if (event.keyCode === 13) {
+        let todoContent = myInput.value;
+        newTodoItem = {
+            title: todoContent,
+            done: false,
+            important: false
+        }
+        let todoListArray = getLocalStorage();
+        todoListArray.unshift(newTodoItem);
+        setLocalStorage(todoListArray);
+        myInput.value = "";
+        render();
+    }
+});
+
+const getLocalStorage = () => {
+    let todoList = localStorage.getItem("todolist");
+    let todoListArray = JSON.parse(todoList);
+    return todoListArray === null ? [] : todoListArray
+}
+
+const setLocalStorage = (todoList) => {
+    let todoListString = JSON.stringify(todoList);
+    localStorage.setItem("todolist", todoListString)
+}
+
+const filterTodoListFromLocalStorage = () => {
+    let todoListArray = getLocalStorage();
+    const currentPageName = document.getElementsByClassName("introduction")[0].innerText;
+    return todoListArray.filter(
         function (todoItem) {
             if (currentPageName === "任务") {
                 return todoItem.done === false;
@@ -88,11 +97,35 @@ const render = () => {
             }
         }
     )
-    let liContent = todos.innerHTML === undefined ? "" : todos.innerHTML;
-    todos[0].innerHTML = "";
-    if (filteredTodoList.length != 0) {
-        document.getElementsByClassName("icon-empty")[0].style.display = "none";
-        filteredTodoList.forEach((item) => {
+}
+const getCurrentPageTodosHtml = () => {
+    return document.getElementsByClassName("todoList")[0].innerHTML;
+}
+
+const setCurrentPageTodosHtml = (html) => {
+    document.getElementsByClassName("todoList")[0].innerHTML = html;
+}
+
+const removeCurrentPageTodos = () => {
+    document.getElementsByClassName("todoList")[0].innerHTML = "";
+}
+
+const setEmptyIconDisappear = () => {
+    document.getElementsByClassName("icon-empty")[0].style.display = "none";
+}
+
+const setEmptyIconAppear = () => {
+    document.getElementsByClassName("icon-empty")[0].style.display = "block";
+}
+
+const render = () => {
+    const filteredTodoListFromLocalStorage = filterTodoListFromLocalStorage();
+    // let currentPageTodosHtml = getCurrentPageTodosHtml() === undefined ? "" : getCurrentPageTodosHtml();
+    let currentPageTodosHtml = "";
+    removeCurrentPageTodos();
+    if (filteredTodoListFromLocalStorage.length != 0) {
+        setEmptyIconDisappear();
+        filteredTodoListFromLocalStorage.forEach((item) => {
             const wujiaoxing = item.important === false ? "kongwujiaoxing" : "shiwujiaoxing";
             const todoLi = `<li class="todo">
                                 <div class="todoEnter" onclick="onComplete()"></div>
@@ -100,11 +133,11 @@ const render = () => {
                                 <div class="iconfont icon-${wujiaoxing}" onclick="onImportant()"> </div>
                             </li>
                             `
-            liContent += todoLi;
-            todos[0].innerHTML = liContent;
+            currentPageTodosHtml += todoLi;
         })
+        setCurrentPageTodosHtml(currentPageTodosHtml);
     } else {
-        document.getElementsByClassName("icon-empty")[0].style.display = "block";
+        setEmptyIconAppear();
     }
 }
 render()
