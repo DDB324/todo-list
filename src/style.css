@@ -149,6 +149,11 @@ body {
     font-size: 30px;
 }
 
+.todoMain .todoContent .todoList .todo .icon-zhengque {
+    color: #5e72c0;
+    font-size: 30px;
+}
+
 .todoMain .todoContent .icon-empty {
     font-size: 50px;
     color: white;
