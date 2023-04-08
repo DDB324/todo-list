@@ -13,18 +13,18 @@
 <body>
     <div class="todoLayout">
         <div class="todoSider">
-            <div class="iconfont icon-gengduo" onclick="closeDrawer()">
+            <div class="iconfont icon-gengduo sider-gengduo">
             </div>
             <ul>
-                <li onclick="clickTaskPage()">
+                <li class="siderTask">
                     <div class="iconfont icon-home-fill"> </div>
                     <span>任务</span>
                 </li>
-                <li onclick="clickImportantPage()">
+                <li class="siderImportance">
                     <div class="iconfont icon-shiwujiaoxing"> </div>
                     <span>重要</span>
                 </li>
-                <li onclick="clickCompletePage()">
+                <li class="siderComplete">
                     <div class="iconfont icon-zhengque"> </div>
                     <span>完成</span>
                 </li>
@@ -32,7 +32,7 @@
         </div>
         <div class="todoWrapper">
             <header class="todoHeader">
-                <div class="iconfont icon-gengduo" onclick="openDrawer()"></div>
+                <div class="iconfont icon-gengduo header-gengduo" class=""></div>
             </header>
             <main class="todoMain">
                 <div class="introduction">
