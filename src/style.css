@@ -37,32 +37,34 @@ body {
 
 .todoSide {
     position: fixed;
-    width: 300px;
+    width: 240px;
     height: 100vh;
     left: -300px;
     top: 0px;
     background-color: #ffffff;
     transition: all .5s;
     z-index: 2;
-    padding: 25px;
+    padding: 10px;
 }
 
 .todoSide .icon-gengduo {
     color: #787878;
-    font-size: 36px;
-    margin-left: 14px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .todoSide ul {
     display: flex;
     flex-direction: column;
+    padding-top: 20px;
 }
 
 .todoSide ul li {
-    margin-top: 20px;
+    margin-bottom: 5px;
     display: flex;
     align-items: center;
-    font-size: 30px;
+    font-size: 15px;
     padding: 4px;
     border-radius: 4px;
 }
@@ -77,8 +79,8 @@ body {
 }
 
 .todoSide ul li .iconfont {
-    font-size: 36px;
-    margin: 10px;
+    font-size: 18px;
+    margin: 5px 8px;
 }
 
 .todoLayout .todoWrapper {
@@ -89,34 +91,41 @@ body {
 
 .todoHeader {
     margin-left: 30px;
-    margin-top: 30px;
+    margin-top: 15px;
     display: flex;
 }
 
 .todoHeader .icon-gengduo {
-    font-size: 36px;
+    font-size: 18px;
     color: white;
+    padding: 10px;
+    margin-left: -10px;
+}
+
+.todoHeader .icon-gengduo:hover {
+    background: #4c5995;
+    border-radius: 4px;
 }
 
 .todoMain {
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
+    margin-left: 27px;
     margin-right: 30px;
-    margin-top: 20px;
+    margin-top: 10px;
     height: 100%;
 }
 
 .todoMain .introduction {
     display: flex;
     align-items: center;
-    font-size: 36px;
+    font-size: 22px;
     color: white;
 }
 
 .todoMain .introduction .iconfont {
-    font-size: 36px;
-    margin-right: 30px;
+    font-size: 25px;
+    margin-right: 10px;
 }
 
 .todoMain .todoContent {
@@ -125,7 +134,7 @@ body {
 }
 
 .todoMain .todoContent .todoList {
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
 }
@@ -133,73 +142,73 @@ body {
 .todoMain .todoContent .todoList .todo {
     display: flex;
     align-items: center;
-    font-size: 24px;
+    font-size: 15px;
     background-color: #ffffff;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     border-radius: 5px;
     padding-left: 20px;
 }
 
 .todoMain .todoContent .todoList .todo span {
     flex-grow: 1;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 30px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 20px;
     margin-right: 30px;
 }
 
 .todoMain .todoContent .todoList .todo .icon-kongwujiaoxing {
-    margin-right: 20px;
-    font-size: 30px;
+    margin-right: 18px;
+    font-size: 20px;
 }
 
 .todoMain .todoContent .todoList .todo .icon-zhengque {
     color: #5e72c0;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .todoMain .todoContent .icon-empty {
-    font-size: 50px;
+    font-size: 40px;
     color: white;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-top: -25px;
-    margin-left: -25px;
+    margin-top: -20px;
+    margin-left: -20px;
 }
 
 .todoMain .todoContent .todoList .todo .icon-shiwujiaoxing {
     margin-right: 20px;
-    font-size: 30px;
+    font-size: 18px;
     color: #5e72c0;
 }
 
 .todoMain .todoContent .todoList .todo .todoEnter {
-    border: 3px solid;
+    border: 2px solid;
     border-radius: 50%;
-    width: 34px;
-    height: 34px;
+    width: 20px;
+    height: 20px;
 }
 
 .todoMain .todoInput {
     display: flex;
     background-color: white;
     align-items: center;
-    padding: 15px;
-    margin: 20px;
+    padding: 10px;
+    margin-bottom: 15px;
     border-radius: 5px;
 }
 
 .todoMain .todoInput .icon-plus {
-    font-size: 26px;
-    margin-right: 20px;
+    font-size: 14px;
+    margin-right: 15px;
 }
 
 .todoMain .todoInput input {
     border: none;
     flex-grow: 1;
-    height: 35px;
-    font-size: 30px;
+    height: 20px;
+    font-size: 14px;
     outline: none;
     background-color: rgba(0, 0, 0, 0);
 }
@@ -207,16 +216,17 @@ body {
 .todoFooter {
     position: fixed;
     width: 100%;
-    height: 300px;
+    height: 260px;
     bottom: -300px;
     left: 0px;
     background-color: #ffffff;
     transition: all .5s;
     z-index: 2;
+    border-radius: 4px;
 }
 
 .todoFooter .todoOperation {
-    font-size: 20px;
+    font-size: 16px;
 
 }
 
@@ -229,12 +239,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 16px;
+    padding: 14px;
 }
 
 .todoFooter .todoOperation .selectOperation span:first-child {
     color: #b2b2bb;
-    border-bottom: 2px solid;
+    border-bottom: 2px solid #f4f4f5;
 }
 
 .todoFooter .todoOperation .selectOperation span:last-child {

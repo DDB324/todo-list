@@ -78,7 +78,7 @@ const todoList = {
             if (item.done) {
                 todoLi = `<li class="todo">
                 <div class="iconfont icon-zhengque""></div>
-                <span  style="text-decoration:line-through">${item.title}</span>
+                <span  style="text-decoration:line-through;color:#a3a5a7;">${item.title}</span>
                 <div class="iconfont icon-${wujiaoxing}"> </div>
             </li>
             `
@@ -220,6 +220,15 @@ const todoList = {
         }
         onClickTodoItem = (event) => {
             todoList.currentOnclickTodoItemTitle = event.target.innerText;
+            todoList.getLocalStorage();
+            const index = todoList.todoListArray.findIndex(todoItem => todoItem.title === todoList.currentOnclickTodoItemTitle)
+            if (index != -1) {
+                if (todoList.todoListArray[index].important) {
+                    todoList.footerImportance.innerText = "取消标记重要";
+                } else {
+                    todoList.footerImportance.innerText = "标记为重要";
+                }
+            }
             todoList.upDrawer();
         }
     },
@@ -233,7 +242,12 @@ const todoList = {
             todoList.todoItemOperation("完成")
         }
         todoList.footerImportance.onclick = () => {
-            todoList.todoItemOperation("重要")
+            if (todoList.footerImportance.innerText === "取消标记重要") {
+                todoList.todoItemOperation("不重要")
+
+            } else {
+                todoList.todoItemOperation("重要")
+            }
         }
         todoList.footerDelete.onclick = () => {
             todoList.todoItemOperation("删除")
