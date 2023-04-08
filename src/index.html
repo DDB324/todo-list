@@ -12,19 +12,19 @@
 
 <body>
     <div class="todoLayout">
-        <div class="todoSider">
-            <div class="iconfont icon-gengduo sider-gengduo">
+        <div class="todoSide">
+            <div class="iconfont icon-gengduo side-gengduo">
             </div>
             <ul>
-                <li class="siderTask">
+                <li class="side-task">
                     <div class="iconfont icon-home-fill"> </div>
                     <span>任务</span>
                 </li>
-                <li class="siderImportance">
+                <li class="side-importance">
                     <div class="iconfont icon-shiwujiaoxing"> </div>
                     <span>重要</span>
                 </li>
-                <li class="siderComplete">
+                <li class="side-complete">
                     <div class="iconfont icon-zhengque"> </div>
                     <span>完成</span>
                 </li>
@@ -54,9 +54,9 @@
             <div class="todoOperation">
                 <div class="selectOperation">
                     <span>选择操作</span>
-                    <span onclick="markComplete()">标记为完成</span>
-                    <span onclick="markImportant()">标记为重要</span>
-                    <span onclick="deleteTask()">删除任务</span>
+                    <span class="footer-complete">标记为完成</span>
+                    <span class="footer-importance">标记为重要</span>
+                    <span class="footer-delete">删除任务</span>
                 </div>
                 <div class="cancel" onclick="downDrawer()">
                     <span>取消</span>
