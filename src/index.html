@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./svg/font_3991123_bc0klba1ng/iconfont.css">
+</head>
+
+<body>
+    <div class="todoLayout">
+        <div class="todoSide">
+            <div class="iconfont icon-gengduo side-gengduo">
+            </div>
+            <ul>
+                <li class="side-task">
+                    <div class="iconfont icon-home-fill"> </div>
+                    <span>任务</span>
+                </li>
+                <li class="side-importance">
+                    <div class="iconfont icon-shiwujiaoxing"> </div>
+                    <span>重要</span>
+                </li>
+                <li class="side-complete">
+                    <div class="iconfont icon-zhengque"> </div>
+                    <span>完成</span>
+                </li>
+            </ul>
+        </div>
+        <div class="todoWrapper">
+            <header class="todoHeader">
+                <div class="iconfont icon-gengduo header-gengduo" class=""></div>
+            </header>
+            <main class="todoMain">
+                <div class="introduction">
+                    <div class="iconfont icon-home-fill"></div>
+                    <span>任务</span>
+                </div>
+                <div class="todoContent">
+                    <ul class="todoList">
+                    </ul>
+                    <div class="iconfont icon-empty"> </div>
+                </div>
+                <div class="todoInput">
+                    <div class="iconfont icon-plus"> </div>
+                    <input class="myInput" type="text" placeholder="添加任务">
+                </div>
+            </main>
+        </div>
+        <div class="todoFooter">
+            <div class="todoOperation">
+                <div class="selectOperation">
+                    <span>选择操作</span>
+                    <span class="footer-complete">标记为已完成</span>
+                    <span class="footer-importance">标记为重要</span>
+                    <span class="footer-delete">删除任务</span>
+                </div>
+                <div class="cancel" onclick="downDrawer()">
+                    <span>取消</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
